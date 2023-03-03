@@ -1,0 +1,1 @@
+import { RoutesConfig } from "@config/";
