@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+body {
+  min-height: 100vh;
+}
+.container {
+  @apply p-8 bg-light-gray-border;
+}
+/* sidebar */
+.sidebar {
+  box-shadow: rgba(0, 0, 0, 0.16) 1px 2px 6px;
+}
+@layer base {
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+}
+/* checkbox */
+.custom-checkbox input:checked + div .custom-checkbox-square {
+  @apply bg-blue-500;
+}
+.custom-checkbox-square {
+  @apply w-[18px] h-[18px];
+}

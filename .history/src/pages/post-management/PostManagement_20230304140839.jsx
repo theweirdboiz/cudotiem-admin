@@ -1,0 +1,14 @@
+import React from "react";
+import PropTypes from "prop-types";
+
+const PostManagement = (props) => {
+  return (
+    <section className="container">
+      <h3 className="text-2xl font-semibold mb-3">Dashboard</h3>
+    </section>
+  );
+};
+
+PostManagement.propTypes = {};
+
+export default PostManagement;
