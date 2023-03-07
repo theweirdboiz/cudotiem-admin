@@ -34,5 +34,5 @@ AuthLayout.propTypes = {
 };
 
 export default withErrorBoundary(AuthLayout, {
-  FallbackComponent: <ErrorComponent />,
+  FallbackComponent: ErrorComponent,
 });

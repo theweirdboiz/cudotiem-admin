@@ -6,4 +6,5 @@
 // export { default as Register } from "./register/Register";
 // export { default as ForgetPassword } from "./forget-password/ForgetPassword";
 
-// export { default as SignUpPage } from "./auth/SingUpPage";
+export { default as SignUpPage } from "./auth/SignUpPage";
+export { default as SignInpPage } from "./auth/SignInPage";

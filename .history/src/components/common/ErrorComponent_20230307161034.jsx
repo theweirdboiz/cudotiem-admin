@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 
 const ErrorComponent = (props) => {
   return (
-    <div className="text-center mt-10">
-      <div className="inline-block text-error bg-light-error p-5 rounded-lg">
-        Look like component is error
-      </div>
+    <div className="text-error bg-light-error bg-opacity-95 my-5 p-5 rounded-lg">
+      Look like component is error
     </div>
   );
 };

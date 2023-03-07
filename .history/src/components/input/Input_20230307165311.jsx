@@ -14,6 +14,7 @@ const Input = ({ control, error = "", placeholder, children, ...props }) => {
   return (
     <div className="relative">
       <input
+        autoFocus={false}
         id={props.name}
         className={`w-full border dark:border-darkStroke rounded-xl py-4 px-6 font-medium text-sm dark:text-white placeholder:text-text-4 dark:placeholder:text-text-2 bg-transparent ${
           error.length > 0

@@ -15,10 +15,8 @@ const Input = ({ control, error = "", placeholder, children, ...props }) => {
     <div className="relative">
       <input
         id={props.name}
-        className={`w-full border dark:border-darkStroke rounded-xl py-4 px-6 font-medium text-sm dark:text-white placeholder:text-text-4 dark:placeholder:text-text-2 bg-transparent ${
-          error.length > 0
-            ? "border-error text-error"
-            : "border-strock text-text-1"
+        className={`w-full border border-strock dark:border-darkStroke rounded-xl py-4 px-6 font-medium text-sm text-text-1 dark:text-white placeholder:text-text-4 dark:placeholder:text-text-2 bg-transparent ${
+          error.length > 0 && "border-error text-error"
         } ${children && "pr-14"}`}
         placeholder={`${error.length < 1 ? placeholder : ""}`}
         {...field}

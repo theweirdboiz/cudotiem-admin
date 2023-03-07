@@ -7,7 +7,7 @@ import { ErrorComponent } from "@components";
 import brand from "@assets/react.svg";
 import ellipse from "@assets/ellipse.svg";
 
-const AuthLayout = ({ children, heading }) => {
+const AuthLayout = ({ children }) => {
   return (
     <div className="min-h-screen bg-lite dark:bg-darkbg p-10 shadow-md relative isolate">
       <img
@@ -30,9 +30,8 @@ const AuthLayout = ({ children, heading }) => {
 
 AuthLayout.propTypes = {
   children: PropTypes.node,
-  heading: PropTypes.string,
 };
 
 export default withErrorBoundary(AuthLayout, {
-  FallbackComponent: <ErrorComponent />,
+  FallbackComponent: ErrorComponent,
 });

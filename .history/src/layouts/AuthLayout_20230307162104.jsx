@@ -30,9 +30,8 @@ const AuthLayout = ({ children, heading }) => {
 
 AuthLayout.propTypes = {
   children: PropTypes.node,
-  heading: PropTypes.string,
 };
 
 export default withErrorBoundary(AuthLayout, {
-  FallbackComponent: <ErrorComponent />,
+  FallbackComponent: ErrorComponent,
 });

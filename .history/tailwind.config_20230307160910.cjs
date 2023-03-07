@@ -24,7 +24,7 @@ module.exports = {
       strock: "#F1F1F3",
       lite: "#FCFCFD",
       error: "#EB5757",
-      "light-error": "rgba(235 ,87 ,87, 0.3)",
+      "light-error": "rgba(235 ,87 ,87, 0.54)",
       darkbg: "#13131A",
       darkSecondary: "#1C1C24",
       softDark: "#22222C",
