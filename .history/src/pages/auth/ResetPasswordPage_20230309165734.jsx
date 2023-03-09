@@ -18,14 +18,18 @@ import * as yup from "yup";
 
 /* A validation schema for the form. */
 const schema = yup.object().shape({
-  email: yup.string().email("").required("This field is required"),
   password: yup
     .string()
     .required("This field is required")
     .min(8, "Password must be 8 character"),
+  "confirm-password": yup
+    .string()
+    .required("This field is required")
+    .min(8, "Password must be 8 character")
+    .oneOf([yup.ref("password")], "Password not matched"),
 });
 
-const SignInPage = (props) => {
+const ResetPasswordPage = (props) => {
   /* Destructuring the useForm hook. */
   const {
     handleSubmit,
@@ -42,28 +46,17 @@ const SignInPage = (props) => {
   /* handle toggle password */
   const { value: showPassword, handleToggleValue: handleTogglePassword } =
     useToggleVale();
+  const {
+    value: showConfirmPassword,
+    handleToggleValue: handleToggleConfirmPassword,
+  } = useToggleVale();
 
   return (
     <>
       <p className="text-center lg:text-sm text-xs font-normal text-text-3 lg:mb-8">
-        Dont have an acccount?{" "}
-        <Link className="text-primary font-medium underline" to="/auth/sign-up">
-          Sign up
-        </Link>
+        Your new password must be different from previous used passwords.
       </p>
-      <ButtonGoogle text={"Sign in with google"}></ButtonGoogle>
-
       <form action="" onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-        <FormGroup>
-          <Label htmlFor="email">Email *</Label>
-          <Input
-            type="email"
-            name="email"
-            control={control}
-            placeholder="johnnyKlame12@gmail.com"
-            error={errors?.email?.message}
-          ></Input>
-        </FormGroup>
         <FormGroup>
           <Label htmlFor="password">Password *</Label>
           <Input
@@ -82,23 +75,30 @@ const SignInPage = (props) => {
           </Input>
         </FormGroup>
         <FormGroup>
-          <div className="text-right">
-            <Link
-              to="/forgot-password"
-              className="inline-block text-sm font-medium text-primary"
-            >
-              Forgot password
-            </Link>
-          </div>
+          <Label htmlFor="confirm-password">Password *</Label>
+          <Input
+            type={`${showConfirmPassword ? "text" : "password"}`}
+            name="confirm-password"
+            control={control}
+            placeholder="Confirm password"
+            error={errors?.["confirm-password"]?.message}
+          >
+            <span className="dark:text-text-2">
+              <IconEyeToggle
+                toggle={showConfirmPassword}
+                onClick={handleToggleConfirmPassword}
+              ></IconEyeToggle>
+            </span>
+          </Input>
         </FormGroup>
         <Button className="w-full bg-primary" type="submit">
-          Sign in
+          Confirm
         </Button>
       </form>
     </>
   );
 };
 
-SignInPage.propTypes = {};
+ResetPasswordPage.propTypes = {};
 
-export default SignInPage;
+export default ResetPasswordPage;

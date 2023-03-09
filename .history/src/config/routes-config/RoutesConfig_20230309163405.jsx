@@ -5,7 +5,7 @@ export const routes = {
   users: "/user",
   signup: "/auth/sign-up",
   signin: "/auth/sign-in",
-  forgot: "/auth/forgot-password",
-  reset: "/auth/reset-password",
+  forgot: "/forgot-password",
+  reset: "/reset-password",
 };
 export default routes;

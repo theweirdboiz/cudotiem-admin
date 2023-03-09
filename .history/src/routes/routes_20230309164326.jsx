@@ -2,6 +2,7 @@ import { RoutesConfig } from "@config/";
 
 import { AuthLayout } from "@layouts";
 import { lazy } from "react";
+import ResetPasswordPage from "../pages/auth/ResetPasswordPage";
 
 const SignUpPage = lazy(() => import("@pages/auth/SignUpPage"));
 const SignIpPage = lazy(() => import("@pages/auth/SignInPage"));

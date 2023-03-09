@@ -48,7 +48,7 @@ const SignInPage = (props) => {
       <p className="text-center lg:text-sm text-xs font-normal text-text-3 lg:mb-8">
         Dont have an acccount?{" "}
         <Link className="text-primary font-medium underline" to="/auth/sign-up">
-          Sign up
+          Sign un
         </Link>
       </p>
       <ButtonGoogle text={"Sign in with google"}></ButtonGoogle>

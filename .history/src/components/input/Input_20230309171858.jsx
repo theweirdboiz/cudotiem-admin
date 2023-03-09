@@ -22,7 +22,7 @@ const Input = ({ control, error = "", placeholder, children, ...props }) => {
           error.length > 0
             ? "border-error text-error"
             : "border-strock text-text-1",
-          children ? "pr-14" : ""
+          children && "pr-14"
         )}
         placeholder={`${error.length < 1 ? placeholder : ""}`}
         {...field}

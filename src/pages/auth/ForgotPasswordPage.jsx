@@ -25,7 +25,7 @@ const schema = yup.object().shape({
     .min(8, "Password must be 8 character"),
 });
 
-const SignInPage = (props) => {
+const ForgotPassowrdPage = (props) => {
   /* Destructuring the useForm hook. */
   const {
     handleSubmit,
@@ -39,20 +39,12 @@ const SignInPage = (props) => {
   /* Const onSubmit = (data) =&gt; console.log(data) */
   const onSubmit = (data) => console.log(data);
 
-  /* handle toggle password */
-  const { value: showPassword, handleToggleValue: handleTogglePassword } =
-    useToggleVale();
-
   return (
     <>
       <p className="text-center lg:text-sm text-xs font-normal text-text-3 lg:mb-8">
-        Dont have an acccount?{" "}
-        <Link className="text-primary font-medium underline" to="/auth/sign-up">
-          Sign up
-        </Link>
+        Enter the email address associated with your account and we'll send you
+        a link to reset your password
       </p>
-      <ButtonGoogle text={"Sign in with google"}></ButtonGoogle>
-
       <form action="" onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         <FormGroup>
           <Label htmlFor="email">Email *</Label>
@@ -64,41 +56,25 @@ const SignInPage = (props) => {
             error={errors?.email?.message}
           ></Input>
         </FormGroup>
-        <FormGroup>
-          <Label htmlFor="password">Password *</Label>
-          <Input
-            type={`${showPassword ? "text" : "password"}`}
-            name="password"
-            control={control}
-            placeholder="Create a password"
-            error={errors?.password?.message}
-          >
-            <span className="dark:text-text-2">
-              <IconEyeToggle
-                toggle={showPassword}
-                onClick={handleTogglePassword}
-              ></IconEyeToggle>
-            </span>
-          </Input>
-        </FormGroup>
-        <FormGroup>
-          <div className="text-right">
+        {/* <FormGroup>
+          <p className="text-center lg:text-sm text-xs font-normal text-text-3 lg:mb-8">
+            Dont have an acccount?{" "}
             <Link
-              to="/forgot-password"
-              className="inline-block text-sm font-medium text-primary"
+              className="text-primary font-medium underline"
+              to="/auth/sign-up"
             >
-              Forgot password
+              Sign up
             </Link>
-          </div>
-        </FormGroup>
+          </p>
+        </FormGroup> */}
         <Button className="w-full bg-primary" type="submit">
-          Sign in
+          Continute
         </Button>
       </form>
     </>
   );
 };
 
-SignInPage.propTypes = {};
+ForgotPassowrdPage.propTypes = {};
 
-export default SignInPage;
+export default ForgotPassowrdPage;

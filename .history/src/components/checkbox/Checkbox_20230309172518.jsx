@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "@ultis/classNames";
+import { useController } from "react-hook-form";
+import classNames from "../../ultis/classNames";
 
 const Checkbox = ({ isChecked, onClick = () => {}, name, children }) => {
   // const { field } = useController({

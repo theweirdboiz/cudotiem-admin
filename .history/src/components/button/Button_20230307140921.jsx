@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "@ultis/classNames";
 
 const Button = ({
   type = "button",
@@ -17,11 +16,9 @@ const Button = ({
   return (
     <button
       {...rest}
-      className={classNames(
-        className,
-        "flex justify-center items-center w-full p-3 text-base font-semibold text-white rounded-xl",
-        !!isLoading ? "bg-opacity-60 pointer-events-nones" : ""
-      )}
+      className={`${className} flex justify-center items-center w-full p-3 text-base font-semibold text-white rounded-xl ${
+        isLoading && "bg-opacity-60 pointer-events-nones"
+      }`}
       type={type}
     >
       {child}

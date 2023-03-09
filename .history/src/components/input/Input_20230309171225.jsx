@@ -5,7 +5,7 @@ import { withErrorBoundary } from "react-error-boundary";
 
 import { ErrorComponent } from "@components";
 
-import classNames from "../../ultis/classNames";
+import classNames from "@ultis/className";
 
 const Input = ({ control, error = "", placeholder, children, ...props }) => {
   const { field } = useController({
@@ -17,13 +17,12 @@ const Input = ({ control, error = "", placeholder, children, ...props }) => {
     <div className="relative">
       <input
         id={props.name}
-        className={classNames(
-          "w-full border dark:border-darkStroke rounded-xl py-4 px-6 font-medium text-sm dark:text-white placeholder:text-text-4 dark:placeholder:text-text-2 bg-transparent",
+        className={classNames()}
+        className={` ${
           error.length > 0
             ? "border-error text-error"
-            : "border-strock text-text-1",
-          children ? "pr-14" : ""
-        )}
+            : "border-strock text-text-1"
+        } ${children && "pr-14"}`}
         placeholder={`${error.length < 1 ? placeholder : ""}`}
         {...field}
         {...props}
