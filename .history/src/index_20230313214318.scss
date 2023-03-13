@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-primary  text-base mx-auto;
+    max-width: 1440px;
+  }
+  input {
+    @apply outline-none;
+    &:focus + .error-input {
+      display: none;
+    }
+  }
+  table thead th {
+    @apply cursor-pointer;
+  }
+  table tbody td {
+    @apply p-2;
+  }
+}

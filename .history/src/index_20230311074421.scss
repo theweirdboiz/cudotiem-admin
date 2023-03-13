@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-primary  text-base mx-auto;
+    max-width: 1440px;
+  }
+  input {
+    @apply outline-none;
+    &:focus + .error-input {
+      display: none;
+    }
+  }
+  .sidebar {
+    @apply fixed top-0 left-0 w-[260px] h-screen bg-white transition-all duration-500;
+  }
+}
